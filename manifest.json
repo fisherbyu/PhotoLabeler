@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Triark Photo Labeler",
+    "version": "1.0",
+    "description": "Assist with Photo Labeling for Inspection Reports on JobNimbus",
+    "icons": {
+        "16": "images/icon.png"
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "scripts/content.js"
+            ],
+            "matches": [
+                "https://*/*"
+            ]
+        }
+    ],
+    "background": {
+        "service_worker": "scripts/background.js"
+    },
+    "action": {
+        "default_popup": "popup/popup.html",
+        "default_icon": {
+            "16": "images/icon.png"
+        }
+    },
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ]
+}
